@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智能任务管理系统</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>智能任务管理系统</h1>
+      <p class="subtitle">高效规划 · 专注执行</p>
+    </header>
+
+    <!-- 输入区 -->
+    <section class="input-card">
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="请输入任务内容，按回车快速添加..."
+        maxlength="100"
+      />
+      <select id="prioritySelect">
+        <option value="高">高优先级</option>
+        <option value="中" selected>中优先级</option>
+        <option value="低">低优先级</option>
+      </select>
+      <button id="addBtn" class="btn btn-primary">添加任务</button>
+    </section>
+
+    <!-- 筛选区 -->
+    <section class="filter-bar">
+      <span class="filter-label">按优先级筛选：</span>
+      <button class="filter-btn active" data-priority="all">全部</button>
+      <button class="filter-btn" data-priority="高">高</button>
+      <button class="filter-btn" data-priority="中">中</button>
+      <button class="filter-btn" data-priority="低">低</button>
+      <span class="stats" id="stats"></span>
+    </section>
+
+    <!-- 任务列表 -->
+    <section class="task-list-wrap">
+      <ul class="task-list" id="taskList"></ul>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <p>暂无任务，添加一个开始吧</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
